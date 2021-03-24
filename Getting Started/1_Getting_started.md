@@ -26,4 +26,4 @@ The linker joins the dots and resolves these dependencies. In the event of succe
 
 Most applications rarely compile and execute as intended at the first run. A huge or complex application programmed in any language needs many runs as part of a testing effort to identify errors in code, called bugs. After the bugs are fixed, the executable is rebuilt, and the testing process continues. 
 
-Thus, in addition to the three steps—programming, compiling, and linking—software development also involves a step called debugging in which the programmer analyzes errors in code and fixes them. Good development environments supply tools and features that help in debugging
+Thus, in addition to the three steps—programming, compiling, and linking—software development also involves a step called debugging in which the programmer analyzes errors in code and fixes them. Good development environments supply tools and features that help in debugging.
