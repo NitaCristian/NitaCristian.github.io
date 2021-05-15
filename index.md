@@ -1,9 +1,7 @@
-Links to p5.js apps:
+# Notes 
 
-- [Koch Square Demo](/koch-square) and [Koch Square Code](https://github.com/NitaCristian/NitaCristian.github.io/tree/main/koch-square) 
-- [Koch Triangle Demo](/koch-triangle) and [Koch Triangle Code](https://github.com/NitaCristian/NitaCristian.github.io/tree/main/koch-tree) 
-- [Koch Tree Demo](/koch-tree) and [Koch Tree Code](https://github.com/NitaCristian/NitaCristian.github.io/tree/main/koch-triangle) 
+## C++ in One Hour a Day
 
-$$
-\sqrt{4} = 2
-$$
+[Lesson 1 - Getting Started](Lesson1/index.md)
+
+[Lesson 2 - The Anatomy of a C++ Program](Lesson2/2-The%20Anatomy%20of%20a%20C++%20Program.md)

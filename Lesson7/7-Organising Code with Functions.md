@@ -1,0 +1,114 @@
+# Organising Code with Functons
+
+In this lesson you learn:
+- The need for programming functions
+- Function prototypes and function definition
+- Passing parameters to functions and returning values from them
+- Overloading functions 
+- Recursive functions 
+
+## The Need for Functions
+
+Another way is to break this application into logical blocks. Compartmentalizing the computation of area and circumference into different  functions can potentially help reuse as the functions can be invoked repeatedly, as and when required.
+
+## What is a Function Prototype
+
+The function prototype basically tells what a function is called (the name, Area), the list of parameters the function accepts (one parameter, a double called radius), and the return type of the function (a double).
+
+Without the function prototype the compiler wouldn’t know what the terms Area and Circumference are. 
+The function prototypes tell the compiler that Area and Circumference are functions; 
+they take one parameter of type double and return a value of type double. 
+The compiler then recognizes these statements as valid and the job of linking the function call to its implementation and ensuring that the program execution actually triggers them is that of the linker
+
+A function can have multiple parameters separated by commas, but it can have only one return type. 
+When programming a function that does not need to return any value, specify the return type as void.
+
+## What is a Function Definition
+
+The implementation of a function—is what is called the definition. 
+A function definition is always comprised of a statement block. 
+A return statement is necessary unless the function is declared with return type void. 
+The statement block contains statements within open and closed braces {...} that are executed when the function is called.
+
+## What is a Function Call, and what are Arguments 
+
+Calling a function is the same as invoking one. 
+When a function declaration contains parameters, the function call needs to send arguments. 
+Arguments are values the function requests within its parameter list. Function parameters are like local variables. They are valid within the scope of the function only.
+
+## Programming Functions with No Parameters or No Return Values
+
+If you delegate the task of saying “Hello World” to a function that does only that and nothing else, you could do it with one that doesn’t need any parameters. 
+As one with return value of type void doesn’t return a value. 
+
+## Function Parameters with Default Values
+
+You can have multiple parameters with default values; 
+however, these should all be at the tail end of the parameter list
+
+## Recursion—Functions That Invoke Themselves
+
+In certain cases, you can actually have a function call itself. 
+Such a function is called a recursive function. 
+Note that a recursive function should have a very clearly defined exit condition where it returns without invoking itself again.
+
+## Functions with Multiple Return Statements
+
+You are not restricted to having only one return statement in your function definition. 
+You can return from any point in the function, and multiple times if you want.
+
+## Overloading Functions
+
+Functions with the same name and return type but with different parameters or set of parameters are said to be overloaded functions. 
+Overloaded functions can be quite  useful in applications where a function with a particular name that produces a certain type of output might need to be invoked with different sets of parameters.
+
+## Passing Arguments by Reference
+
+There are cases where you might need a function to work on a variable that modifies a value that is available outside the function, too, say in the calling function. 
+This is when you declare a parameter that takes an argument by reference. 
+
+Don’t miss the ampersand (&) next to the second parameter result. 
+This sign indicates to the compiler that the second argument should NOT be copied to the function; instead, it is a reference to the variable being passed. 
+The return type has been changed to void as the function no longer sup-plies the area computed as a return value, rather as an output parameter by reference.
+
+## How Function Calls Are Handled by the Microprocessor
+
+Understanding this helps you understand why C++ gives you the option of programming inline functions.
+
+A function call essentially means that the microprocessor jumps to executing the next instruction belonging to the called function at a nonsequential memory location. 
+After it is done with executing the instructions in the function, it returns to where it left off. 
+
+To implement this logic, the compiler converts your function call into a CALL instruction for the microprocessor. 
+This instruction is accompanied by the address in memory the next instruction needs to be taken from.
+When the microprocessor encounters CALL, it saves the position of the instruction to be executed after the function call on the stack and jumps to the memory location contained in the CALL instruction.
+
+### Understanding the Stack
+
+The stack is a Last-In-First-Out memory structure, quite like a stack of plates where you pick the plate on top, which was the last one to be placed on the stack. 
+
+Putting data onto the stack is called a push operation. 
+Getting data out of the stack is called a pop operation. 
+
+As the stack grows upward, the stack pointer always increments as it grows and points to the top of the stack. 
+
+---
+
+The nature of the stack makes it optimal for handling function calls. 
+When a function is called, all local variables are instantiated on the stack. 
+When the function ends, they’re simply popped off it, and the stack pointer returns to where it originally was.
+
+This memory location contains instructions belonging to the function. 
+The microprocessor executes them until it reaches the RET statement (the microprocessor’s code for return programmed by you). 
+
+The RET statement results in the microprocessor popping that address from the stack stored during the CALL instruction. 
+This address contains the location in the calling function where the execution needs to continue from.
+Thus, the microprocessor is back to the caller and continues where it left off.
+
+## Inline Functions
+
+A regular function call is translated into a CALL instruction, which results in stack operations and microprocessor execution shift to the function and so on. 
+The overhead of performing an actual function call on this might be quite high for the amount of time spent actually executing GetPi(). 
+
+This is why C++ compilers enable the programmer to declare such functions as inline. 
+ 
+Compilers typically see this keyword as a request to place the contents of the function directly where the function has been invoked which increases the execution speed of the code.
