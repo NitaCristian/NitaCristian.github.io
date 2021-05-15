@@ -1,5 +1,7 @@
 # C++ in One Hour a Day - Notes
 
+---
+
 ## Part | - The Basics
 
 [Lesson 1 - Getting Started](Lesson1/index.md)
