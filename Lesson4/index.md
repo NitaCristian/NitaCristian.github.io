@@ -39,7 +39,7 @@ Bytes consumed by an array = sizeof(element_type) * Number of Elements
 
 Elements in an array can be accessed using their zero-based index. These indexes are called zero-based because the first element in an array is at index 0. 
 
-When asked to access element at `index N`, the compiler uses the memory address of the first element (positioned at index zero) as the starting point and then skips N elements by adding the offset computed as `N * sizeof(element)` to reach the address containing the `(N+1)th` element. 
+When asked to access element at index N, the compiler uses the memory address of the first element (positioned at index zero) as the starting point and then skips N elements by adding the offset computed as N * sizeof(element) to reach the address containing the (N+1)th element. 
 
 The C++ compiler does not check if the index is within the actual defined bounds of the array. You can try fetching the element at index 1001 in an array of only 10 elements, putting the security and stability of your program at risk.
 

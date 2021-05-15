@@ -11,7 +11,7 @@ type_name variable_name;
 or
 type_name variable_name = initial_value; 
 ```
-The `type_name` attribute tells the compiler the nature of data the variable can store, and the compiler reserves the necessary space for it. 
+The type_name attribute tells the compiler the nature of data the variable can store, and the compiler reserves the necessary space for it. 
 
 The name chosen by the programmer is a friendly replacement for the address in the memory where the variable’s value is stored.
 

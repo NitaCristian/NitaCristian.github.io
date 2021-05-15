@@ -10,7 +10,7 @@ Another way is to break this application into logical blocks. Compartmentalizing
 
 ---
 
-The `function prototype` basically tells what a function is `called`, the `list of parameters` the function accepts, and the `return type` of the function.
+The function prototype basically tells what a function is called, the list of parameters the function accepts, and the return type of the function.
 
 Without the function prototype the compiler wouldn’t know what the terms Area and Circumference are. 
 
@@ -154,15 +154,15 @@ Understanding this helps you understand why C++ gives you the option of programm
 A function call essentially means that the microprocessor jumps to executing the next instruction belonging to the called function at a nonsequential memory location. 
 After it is done with executing the instructions in the function, it returns to where it left off. 
 
-To implement this logic, the compiler converts your function call into a `CALL` instruction for the microprocessor. 
+To implement this logic, the compiler converts your function call into a CALL instruction for the microprocessor. 
 This instruction is accompanied by the address in memory the next instruction needs to be taken from.
-When the microprocessor encounters `CALL`, it saves the position of the instruction to be executed after the function call on the stack and jumps to the memory location contained in the `CALL` instruction.
+When the microprocessor encounters CALL, it saves the position of the instruction to be executed after the function call on the stack and jumps to the memory location contained in the CALL instruction.
 
 ### Understanding the Stack
 
 ---
 
-The stack is a `Last-In-First-Out` memory structure, quite like a stack of plates where you pick the plate on top, which was the last one to be placed on the stack. 
+The stack is a Last-In-First-Out memory structure, quite like a stack of plates where you pick the plate on top, which was the last one to be placed on the stack. 
 
 Putting data onto the stack is called a push operation. 
 Getting data out of the stack is called a pop operation. 
@@ -178,9 +178,9 @@ When a function is called, all local variables are instantiated on the stack.
 When the function ends, they’re simply popped off it, and the stack pointer returns to where it originally was.
 
 This memory location contains instructions belonging to the function. 
-The microprocessor executes them until it reaches the `RET` statement (the microprocessor’s code for return programmed by you). 
+The microprocessor executes them until it reaches the RET statement (the microprocessor’s code for return programmed by you). 
 
-The `RET` statement results in the microprocessor popping that address from the stack stored during the `CALL` instruction. 
+The RET statement results in the microprocessor popping that address from the stack stored during the CALL instruction. 
 This address contains the location in the calling function where the execution needs to continue from.
 Thus, the microprocessor is back to the caller and continues where it left off.
 
@@ -188,10 +188,10 @@ Thus, the microprocessor is back to the caller and continues where it left off.
 
 ---
 
-A regular function call is translated into a `CALL` instruction, which results in stack operations and microprocessor execution shift to the function and so on. 
-The overhead of performing an actual function call on this might be quite `high` for the amount of time spent actually executing GetPi(). 
+A regular function call is translated into a CALL instruction, which results in stack operations and microprocessor execution shift to the function and so on. 
+The overhead of performing an actual function call on this might be quite high for the amount of time spent actually executing GetPi(). 
 
-This is why C++ compilers enable the programmer to declare such functions as `inline`. 
+This is why C++ compilers enable the programmer to declare such functions as inline. 
  
 Compilers typically see this keyword as a request to place the contents of the function directly where the function has been invoked which increases the execution speed of the code.
 

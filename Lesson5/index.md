@@ -49,10 +49,10 @@ The assignment operator replaces the value contained by the operand to the left 
 
 ---
 
-`L-values` often refer to locations in memory. 
+L-values often refer to locations in memory. 
 A variable is actually a handle to a memory location and is an l-value. 
 
-`R-values`, on the other hand, can be the very content of a memory location. 
+R-values, on the other hand, can be the very content of a memory location. 
 So, all l-values can be r-values, but not all r-values can be l-values.
 
 ```c++
@@ -69,12 +69,12 @@ foo = 5;
 
 ---
 
-You can perform an arithmetic operation between two operands by using `+` for addition, `–` for subtraction, `*` for multiplication, `/` for division, and `%` for modulo operation.
+You can perform an arithmetic operation between two operands by using + for addition, – for subtraction, * for multiplication, / for division, and % for modulo operation.
 
-Note that the division operator `/` returns the result of division between two operands. 
+Note that the division operator / returns the result of division between two operands. 
 In the case of integers, however, the result contains no decimals as integers by definition cannot hold decimal data. 
 
-The modulo operator `%` returns the remainder of a division operator, and it is applicable only on integer values.
+The modulo operator % returns the remainder of a division operator, and it is applicable only on integer values.
 
 ### Operators to Increment and Decrement
 
@@ -88,9 +88,9 @@ C++ includes the ++ (increment) and -- (decrement) operators to help you with th
 
 ---
 
-The result of execution of the `postfix operators` is that the l-value is first assigned the r-value and after that assignment the r-value is incremented (or decremented). 
+The result of execution of the postfix operators is that the l-value is first assigned the r-value and after that assignment the r-value is incremented (or decremented). 
 
-`Prefix operators` have exactly the opposite in behavior. The r-value is first incremented (or decremented) and then assigned to the l-value.
+Prefix operators have exactly the opposite in behavior. The r-value is first incremented (or decremented) and then assigned to the l-value.
 
 ```c++
 int foo = 0;
@@ -122,15 +122,15 @@ In addition to equality checks, you might want to check for inequality of a cert
 
 ---
 
-Logical `NOT` operation is supported by the operator ! and works on a single operand.
+Logical NOT operation is supported by the operator ! and works on a single operand.
 
 Other operators such as AND, OR, and XOR need two operands.
 
-Logical `AND` operation evaluates to true only when each operand evaluates to true. Logical AND operation is supported by operator &&.
+Logical AND operation evaluates to true only when each operand evaluates to true. Logical AND operation is supported by operator &&.
 
-Logical `OR` evaluates to true when at least one of the operands evaluates to true. Logical OR operation is supported by operator ||.
+Logical OR evaluates to true when at least one of the operands evaluates to true. Logical OR operation is supported by operator ||.
 
-The `exclusive OR` (abbreviated to XOR) operation is slightly different than the logical OR for it evaluates to true when any one operand is true but not both.
+The exclusive OR (abbreviated to XOR) operation is slightly different than the logical OR for it evaluates to true when any one operand is true but not both.
 
 ### Bitewise NOT, AND, OR, XOR Operators
 

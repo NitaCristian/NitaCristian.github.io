@@ -21,19 +21,19 @@ If you want to execute multiple statements in event of a condition succeeding or
 ---
 
 The objective of switch-case is to enable you to check a particular expression against a host of possible constants and possibly perform a different action for each of those different values. 
-The C++ keywords you would often find in such a construct are `switch`, `case`, `default`, and `break`.
+The C++ keywords you would often find in such a construct are switch, case, default, and break.
 
-Each `case label` needs to be a constant. 
+Each case label needs to be a constant. 
 It then executes the code following that label. 
 When the expression does not evaluate to LabelA, it checks against LabelB. 
 
-This check continues until it encounters a `break`. 
+This check continues until it encounters a break. 
 This is the first time we are using the keyword break. 
 break causes execution to exit the code block. 
 
 breaks are not compulsory; 
 however, without a break the execution simply continues checking against the next labels and so on, which is what you want to avoid in this case. 
-`default` is optional, too, and is the case that is executed when the expression does not equate to any of the labels in the switch-case construct.
+default is optional, too, and is the case that is executed when the expression does not equate to any of the labels in the switch-case construct.
 
 ```c++
 switch (expression)
