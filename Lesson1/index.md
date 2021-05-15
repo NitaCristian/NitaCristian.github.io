@@ -1,6 +1,4 @@
-# Getting started
-
-## Programming a C++ Application
+# Programming a C++ Application
 
 ---
 
@@ -8,7 +6,7 @@ When you start Notepad on Windows or the Terminal on Linux, you actually are tel
 
 The executable is the finished product that can be run and should do what the programmer intended to achieve.
 
-## Steps to Generating an Executable
+# Steps to Generating an Executable
 
 ---
 
@@ -26,7 +24,7 @@ The linker joins the dots and resolves these dependencies. In the event of succe
 
 This entire process is also called building an executable.
 
-## Analyzing Errors and Debugging
+# Analyzing Errors and Debugging
 
 ---
 
