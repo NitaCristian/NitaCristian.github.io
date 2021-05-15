@@ -1,6 +1,6 @@
-# Notes 
+# C++ in One Hour a Day - Notes
 
-## C++ in One Hour a Day
+## Part | - The Basics
 
 [Lesson 1 - Getting Started](Lesson1/index.md)
 
@@ -17,3 +17,5 @@
 [Lesson 7 - Organising Code with Functions](Lesson7/index.md)
 
 [Lesson 8 - Pointers and References Explained](Lesson8/index.md)
+
+## Part || - Fundamentals of Object-Oriented C++ Programming
