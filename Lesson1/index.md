@@ -1,3 +1,5 @@
+# Getting Started
+
 # Programming a C++ Application
 
 ---
