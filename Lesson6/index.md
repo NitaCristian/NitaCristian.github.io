@@ -24,16 +24,13 @@ The objective of switch-case is to enable you to check a particular expression a
 The C++ keywords you would often find in such a construct are switch, case, default, and break.
 
 Each case label needs to be a constant. 
-It then executes the code following that label. 
 When the expression does not evaluate to LabelA, it checks against LabelB. 
 
 This check continues until it encounters a break. 
-This is the first time we are using the keyword break. 
 break causes execution to exit the code block. 
 
-breaks are not compulsory; 
-however, without a break the execution simply continues checking against the next labels and so on, which is what you want to avoid in this case. 
-default is optional, too, and is the case that is executed when the expression does not equate to any of the labels in the switch-case construct.
+without a break the execution simply continues checking against the next labels and so on. 
+default is the case that is executed when the expression does not equate to any of the labels in the switch-case construct.
 
 ```c++
 switch (expression)
@@ -108,7 +105,8 @@ for (initialization; condition; increment)
 
 ---
 
-C++11 introduced a new variant of the for loop that makes operating over a range of values, such as those contained in an array, simpler to code and to read. The syntax of the range-based for loop also uses the same keyword for:
+C++11 introduced a new variant of the for loop that makes operating over a range of values simpler to code and to read. 
+The syntax of the range-based for loop also uses the same keyword for:
 
 ```c++
 for (VarType varName : sequence) { 

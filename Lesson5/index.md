@@ -7,7 +7,6 @@
 Languages — spoken or programmed — are composed of statements that are executed one after another. 
 All statements in C++ end with a semicolon (;), which defines the boundary of a statement. 
 This is similar to the period (.) you add when ending a sentence in English. 
-The next statement can start immediately after the semicolon, but for convenience and readability you often program successive statements on successive lines.
 
 ```c++
 int foo; // This is a statement
@@ -70,10 +69,6 @@ foo = 5;
 ---
 
 You can perform an arithmetic operation between two operands by using + for addition, – for subtraction, * for multiplication, / for division, and % for modulo operation.
-
-Note that the division operator / returns the result of division between two operands. 
-In the case of integers, however, the result contains no decimals as integers by definition cannot hold decimal data. 
-
 The modulo operator % returns the remainder of a division operator, and it is applicable only on integer values.
 
 ### Operators to Increment and Decrement
@@ -136,10 +131,11 @@ The exclusive OR (abbreviated to XOR) operation is slightly different than the l
 
 ---
 
-The difference between the logical and the bitwise operators is that bitwise operators don’t return a boolean result. Instead, they supply a result in which individual bits are governed by executing the operator on the operands’ bits. 
+The difference between the logical and the bitwise operators is that bitwise operators don’t return a boolean result. 
+Instead, they supply a result in which individual bits are governed by executing the operator on the operands’ bits. 
 
-C++ allows you to perform operations such as NOT, OR, AND, and exclusive OR (that is, XOR) operations on a bitwise mode where you can manipulate individual bits by negating them using ~, OR-ing them using |, AND-ing them using &, and XOR-ing them using ^. 
-The latter three are performed against a number (typically a bit mask) of your choosing.
+C++ allows you to perform operations such as NOT, OR, AND, and exclusive OR (that is, XOR) operations on a bitwise mode where you can manipulate individual bits by 
+negating them using ~, OR-ing them using |, AND-ing them using &, and XOR-ing them using ^. 
 
 ### Bitewise Right Shift and Left Shift Operators
 

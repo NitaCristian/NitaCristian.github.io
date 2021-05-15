@@ -4,19 +4,16 @@
 
 ---
 
-Another way is to break this application into logical blocks. Compartmentalizing the computation of area and circumference into different  functions can potentially help reuse as the functions can be invoked repeatedly, as and when required.
+Another way is to break this application into logical blocks. 
+Compartmentalizing the computation of a value into different functions can potentially help reuse as the functions can be invoked repeatedly when required.
 
 ## What is a Function Prototype
 
 ---
 
 The function prototype basically tells what a function is called, the list of parameters the function accepts, and the return type of the function.
-
-Without the function prototype the compiler wouldn’t know what the terms Area and Circumference are. 
-
-The function prototypes tell the compiler that Area and Circumference are functions; 
-they take one parameter of type double and return a value of type double. 
-The compiler then recognizes these statements as valid and the job of linking the function call to its implementation and ensuring that the program execution actually triggers them is that of the linker
+Without the function prototype the compiler wouldn’t know what the names of the functions are when called. 
+The compiler then linkes the function call to its implementation and ensuring that the program execution actually triggers them.
 
 A function can have multiple parameters separated by commas, but it can have only one return type. 
 When programming a function that does not need to return any value, specify the return type as void.
@@ -29,7 +26,7 @@ type functionName(type1 parameter1, type2 parameter2);
 
 ---
 
-The implementation of a function—is what is called the definition. 
+The implementation of a function is called the definition. 
 A function definition is always comprised of a statement block. 
 A return statement is necessary unless the function is declared with return type void. 
 The statement block contains statements within open and closed braces {...} that are executed when the function is called.
@@ -48,7 +45,8 @@ type functionName(type1 parameter1, type2 parameter2)
 
 Calling a function is the same as invoking one. 
 When a function declaration contains parameters, the function call needs to send arguments. 
-Arguments are values the function requests within its parameter list. Function parameters are like local variables. They are valid within the scope of the function only.
+Arguments are values the function requests within its parameter list. 
+Function parameters are like local variables and are valid within the scope of the function only.
 
 ```c++
 int main()
@@ -68,11 +66,11 @@ As one with return value of type void doesn’t return a value.
 
 ---
 
-You can have multiple parameters with default values; 
-however, these should all be at the tail end of the parameter list
+You can have multiple parameters with default values.
+However, these should all be at the tail end of the parameter list.
 
 ```c++
-void function (int a, int b = 0) {}
+void function (int a, int b = 0, int c = 10) {}
 // can be called without the b parameter: function(12);
 ```
 
@@ -120,7 +118,7 @@ void function()
 ---
 
 Functions with the same name and return type but with different parameters or set of parameters are said to be overloaded functions. 
-Overloaded functions can be quite  useful in applications where a function with a particular name that produces a certain type of output might need to be invoked with different sets of parameters.
+Overloaded functions can be quite useful in applications where a function with a particular name that produces a certain type of output might need to be invoked with different sets of parameters.
 
 ```c++
 void func() {}
@@ -131,12 +129,11 @@ void func(int a, int b) {}
 
 ---
 
-There are cases where you might need a function to work on a variable that modifies a value that is available outside the function, too, say in the calling function. 
+There are cases where you might need a function to work on a variable that modifies a value that is available outside the function. 
 This is when you declare a parameter that takes an argument by reference. 
 
 Don’t miss the ampersand (&) next to the second parameter result. 
-This sign indicates to the compiler that the second argument should NOT be copied to the function; instead, it is a reference to the variable being passed. 
-The return type has been changed to void as the function no longer supplies the area computed as a return value, rather as an output parameter by reference.
+This sign indicates to the compiler that the second argument should NOT be copied to the function, and instead it is a reference to the variable being passed. 
 
 
 ```c++
@@ -148,8 +145,6 @@ void func(int foo, float &bar)
 ## How Function Calls Are Handled by the Microprocessor
 
 ---
-
-Understanding this helps you understand why C++ gives you the option of programming inline functions.
 
 A function call essentially means that the microprocessor jumps to executing the next instruction belonging to the called function at a nonsequential memory location. 
 After it is done with executing the instructions in the function, it returns to where it left off. 
@@ -169,7 +164,7 @@ Getting data out of the stack is called a pop operation.
 
 As the stack grows upward, the stack pointer always increments as it grows and points to the top of the stack. 
 
-[The Stack](https://upload.wikimedia.org/wikipedia/commons/d/d3/Call_stack_layout.svg)
+![The Stack](https://upload.wikimedia.org/wikipedia/commons/d/d3/Call_stack_layout.svg)
 
 ---
 
@@ -189,10 +184,9 @@ Thus, the microprocessor is back to the caller and continues where it left off.
 ---
 
 A regular function call is translated into a CALL instruction, which results in stack operations and microprocessor execution shift to the function and so on. 
-The overhead of performing an actual function call on this might be quite high for the amount of time spent actually executing GetPi(). 
+The overhead of performing an actual function call might be quite high for the amount of time spent actually executing it. 
 
 This is why C++ compilers enable the programmer to declare such functions as inline. 
- 
 Compilers typically see this keyword as a request to place the contents of the function directly where the function has been invoked which increases the execution speed of the code.
 
-[Inline Function Example](https://simplesnippets.tech/wp-content/uploads/2018/03/inline-functions-in-c.jpg)
+![Inline Function Example](https://simplesnippets.tech/wp-content/uploads/2018/03/inline-functions-in-c.jpg)
