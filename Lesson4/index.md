@@ -1,10 +1,8 @@
 # Managing Arrays and Strings
 
-In this lesson, you learn: 
-- What arrays are and how to declare and use them
-- What strings are and how to use character arrays to make them
-
 ## What is an Array
+
+---
 
 An array is a group of elements forming a complete unit. The following are characteristics of an array: 
 
@@ -14,12 +12,16 @@ An array is a group of elements forming a complete unit. The following are chara
 
 ## Declaring and Initializing a Static Array
 
+---
+
 Array declaration in C++ follows a simple syntax:
 
 ```c++    
-ElementType ArrayName [constant_number of elements] = {optional initial values};
+type ArrayName [constant_number of elements] = {optional initial values};
 ```
 ## How data is stored in an Array
+
+---
 
 Think of books placed on a shelf, one next to the other. Each book is an element in the array, and the rack is akin to the memory that has been reserved to store this collection of books.
 
@@ -33,13 +35,23 @@ Bytes consumed by an array = sizeof(element_type) * Number of Elements
 
 ## Accessing Data Store in an Array
 
+---
+
 Elements in an array can be accessed using their zero-based index. These indexes are called zero-based because the first element in an array is at index 0. 
 
-When asked to access element at index N, the compiler uses the memory address of the first element (positioned at index zero) as the starting point and then skips N elements by adding the offset computed as N * sizeof(element) to reach the address containing the (N+1)th element. 
+When asked to access element at `index N`, the compiler uses the memory address of the first element (positioned at index zero) as the starting point and then skips N elements by adding the offset computed as `N * sizeof(element)` to reach the address containing the `(N+1)th` element. 
 
 The C++ compiler does not check if the index is within the actual defined bounds of the array. You can try fetching the element at index 1001 in an array of only 10 elements, putting the security and stability of your program at risk.
 
+```c++
+int arr[10];
+
+arr[3] = 4; // This is the 4th element
+```
+
 ## Declaring and Initializing Multidimensional Arrays
+
+---
 
 C++ enables you to declare multidimensional arrays by indicating the number of elements you want to reserve in each dimension.
 
@@ -49,7 +61,15 @@ type name [][];
 
 When you need to access an integer in this array, you would need to use a first subscript to address the array where the integer is and the second subscript to address that integer in this array.
 
+```c++
+int mat[10][20]; // 10 rows, 20 columns
+
+mat[5][10]; // 6th row, 11th column
+```
+
 ## C-Style Character Strings
+
+---
 
 C-style strings are a special case of an array of characters. 
 

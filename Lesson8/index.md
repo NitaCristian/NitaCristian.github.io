@@ -1,14 +1,8 @@
 # Pointers and References Explained
 
-In this lesson, you find out: 
-- What pointers are 
-- How to use operators new and delete to allocate and free memory 
-- How to write stable applications using pointers and dynamic allocation 
-- What references are 
-- Differences between pointers and references 
-- When to use a pointer and when to use references
-
 ## What Is a Pointer?
+
+---
 
 A pointer is also a variable, one that stores an address in memory. 
 Just the same way as a variable of type int is used to contain an integer value, a pointer variable is used to contain a memory address. 
@@ -17,6 +11,8 @@ A pointer is a variable, and like all variables a pointer occupies space in memo
 What’s special about pointers is that the value contained in a pointer is interpreted as a memory address. So, a pointer is a special variable that points to a location in memory.
 
 ## Declaring a Pointer
+
+---
 
 A pointer being a variable needs to be declared, too. 
 You normally declare a pointer to point to a specific value type. 
@@ -29,10 +25,14 @@ NULL is a value that can be checked against and one that cannot be a memory addr
 
 ## Determining the Address of a Variable Using the Reference Operator (&)
 
+---
+
 Variables are tools the language provides for you to work with data in memory. 
 If varName is a variable, &varName gives the address in memory where its value is placed.
 
 ## Using Pointers to Store Addresses
+
+---
 
 You have learned how to declare pointers and how to determine the address of a variable.
 You also know that pointers are variables that are used to hold memory addresses. 
@@ -41,6 +41,8 @@ It’s time to connect these dots and use pointers to store the addresses obtain
 To store the address of this variable in a pointer, you would declare a pointer of the same type and initialize the pointer to the variable’s address using the referencing operator (&).
 
 ## Access Pointed Data Using the Dereference Operator (*)
+
+---
 
 You have a pointer to data, containing a valid address. How do you access that location? 
 
@@ -52,6 +54,8 @@ Thus, the validity of the address contained in the pointer is absolutely essenti
 
 ## Dynamic Memory Allocation
 
+---
+
 To program an application that is able to optimally consume memory resources on the basis of the needs of the user, you need to use dynamic memory allocation. 
 This enables you to allocate more when you need more memory and release memory that you have in excess. 
 
@@ -59,6 +63,8 @@ C++ supplies you two operators, new and delete, to help you better manage the me
 Pointers being variables that are used to contain memory addresses play a critical role in efficient dynamic memory allocation.
 
 ## Using Operators new and delete to Allocate and Release Memory Dynamically
+
+---
 
 You use new to allocate new memory blocks. 
 The most frequently used form of newreturns a pointer to the requested memory if successful or else throws an exception. 
@@ -78,8 +84,9 @@ Operator delete cannot be invoked on any address contained in a pointer, rather 
 Operators new and delete allocate memory from the free store. 
 The free store is a memory abstraction in the form of a pool of memory where your application can allocate (that is, reserve) memory from and de-allocate (that is, release) memory to.
 
-
 ## Effect of Incrementing and Decrementing Operators (++ and --) on Pointers
+
+---
 
 A pointer contains a memory address. 
 For example, the pointer to an integer contains 0x002EFB34—the address where the integer is placed. 
@@ -95,6 +102,8 @@ Decrementing pointers using operator (--) demonstrates the same effect — the a
 
 ## Using the const Keyword on Pointers
 
+---
+
 You learned that declaring a variable as const effectively ensures that value of the variable is fixed as the initialization value for the life of the variable. 
 The value of a const-variable cannot be changed, and therefore it cannot be used as an l-value.
 
@@ -109,13 +118,16 @@ Thus, when it comes to pointers and constants, you have the following combinatio
 These different forms of const are particularly useful when passing pointers to functions. Function parameters need to be declared to support the highest possible (restrictive) level of const-ness, to ensure that a function does not modify the pointed value when it is not supposed to. 
 This will keep programmers of your application from making unwanted changes to pointer values or data.
 
-
 ## Passing Pointers to Functions
+
+---
 
 Pointers are an effective way to pass memory space that contains relevant data for functions to work on. The memory space shared can also return the result of an operation. 
 When using a pointer with functions, it becomes important to ensure that the called function is only allowed to modify parameters that you want to let it modify, but not others. 
 
 ## Similarities between Arrays and Pointers
+
+---
 
 When you declare an array of integers:
 
@@ -130,6 +142,8 @@ It is important to remember that pointers that are allocated dynamically using o
 
 ## Common Programming Mistakes When Using Pointers
 
+---
+
 C++ enables you to allocate memory dynamically so that you can optimize and control the memory consumption of your application. 
 
 Unlike newer languages such as C# and Java that are based on a runtime environment, C++ does not feature an automatic garbage collector that cleans up the memory your program has allocated but can’t use. 
@@ -142,8 +156,9 @@ When Pointers Don’t Point to Valid Memory Locations when you dereference a poi
 Logical as this may seem, invalid pointers are quite a common reason for application crashes. 
 Pointers can be invalid for a range of reasons, primarily due to poor programming and memory management.
 
-
 ## When Pointers Don’t Point to Valid Memory Locations
+
+---
 
 When you dereference a pointer using operator (*) to access the pointed value, you need to be sure that the pointer contains a valid memory location, or else your program will either crash or misbehave.
 
@@ -152,6 +167,8 @@ Pointers can be invalid for a range of reasons, primarily due to poor programmin
 
 ## Dangling Pointers (Also Called Stray or Wild Pointers)
 
+---
+
 Note that any valid pointer is invalid after it has been released using delete. 
 In other words, even a valid pointer would be invalid after the call to delete, and should not be used after this point.
 
@@ -159,6 +176,8 @@ To avoid this problem, some programmers follow the convention of assigning NULL 
 They also always check a pointer for validity (by comparing against NULL) before dereferencing it using operator (*).
 
 ## Checking Whether Allocation Request Using new Succeeded
+
+---
 
 There are applications that need to make requests for large chunks of memory (for example, database applications). 
 Additionally, it is good to not simply assume that memory allocation requests will always be successful. 
@@ -173,6 +192,8 @@ For those who don’t want to rely on exceptions, there is a variant of `new` ca
 
 ## What Is a Reference?
 
+---
+
 A reference is an alias for a variable. 
 When you declare a reference, you need to initialize it to a variable. 
 Thus, the reference variable is just a different way to access the data stored in the variable being referenced. 
@@ -185,6 +206,8 @@ VarType& ReferenceVariable = original;
 
 ## What Makes References Useful?
 
+---
+
 References enable you to work with the memory location they are initialized to. 
 This makes references particularly useful when programming functions. 
 
@@ -192,9 +215,13 @@ It would be ideal if we could avoid or eliminate the copy steps, enabling the fu
 
 ## Using Keyword const on References
 
+---
+
 You might need to have references that are not allowed to change the value of the original variable being aliased. Using const when declaring such references is the way to achieve that.
 
 ## Passing Arguments by Reference to Functions
+
+---
 
 One of the major advantages of references is that they allow a called function to work on parameters that have not been copied from the calling function, resulting in significant performance improvements. 
 However, as the called function works using parameters directly on the stack of the calling function, it is often important to ensure that the called function cannot change the value of the variable at the caller’s end. 
