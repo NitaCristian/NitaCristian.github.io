@@ -42,15 +42,18 @@ Operators are tools that C++ provides for you to be able to work with data, tran
 
 ---
 
-A statement can use the assignment operator to initialize a variable to a value. The assignment operator replaces the value contained by the operand to the left (unimaginatively called l-value) by that on the right (called r-value).
+A statement can use the assignment operator to initialize a variable to a value. 
+The assignment operator replaces the value contained by the operand to the left (unimaginatively called l-value) by that on the right (called r-value).
 
 ### Understanding L-Values and R-Values
 
 ---
 
-`L-values` often refer to locations in memory. A variable is actually a handle to a memory location and is an l-value. 
+`L-values` often refer to locations in memory. 
+A variable is actually a handle to a memory location and is an l-value. 
 
-`R-values`, on the other hand, can be the very content of a memory location. So, all l-values can be r-values, but not all r-values can be l-values.
+`R-values`, on the other hand, can be the very content of a memory location. 
+So, all l-values can be r-values, but not all r-values can be l-values.
 
 ```c++
 int foo; // This is both an l-value and and r-value
@@ -68,7 +71,8 @@ foo = 5;
 
 You can perform an arithmetic operation between two operands by using `+` for addition, `–` for subtraction, `*` for multiplication, `/` for division, and `%` for modulo operation.
 
-Note that the division operator `/` returns the result of division between two operands. In the case of integers, however, the result contains no decimals as integers by definition cannot hold decimal data. 
+Note that the division operator `/` returns the result of division between two operands. 
+In the case of integers, however, the result contains no decimals as integers by definition cannot hold decimal data. 
 
 The modulo operator `%` returns the remainder of a division operator, and it is applicable only on integer values.
 
@@ -134,7 +138,8 @@ The `exclusive OR` (abbreviated to XOR) operation is slightly different than the
 
 The difference between the logical and the bitwise operators is that bitwise operators don’t return a boolean result. Instead, they supply a result in which individual bits are governed by executing the operator on the operands’ bits. 
 
-C++ allows you to perform operations such as NOT, OR, AND, and exclusive OR (that is, XOR) operations on a bit-wise mode where you can manipulate individual bits by negating them using ~, ORringthem using |, ANDing them using &, and XORring them using ^. The latter three are performed against a number (typically a bit mask) of your choosing.
+C++ allows you to perform operations such as NOT, OR, AND, and exclusive OR (that is, XOR) operations on a bitwise mode where you can manipulate individual bits by negating them using ~, OR-ing them using |, AND-ing them using &, and XOR-ing them using ^. 
+The latter three are performed against a number (typically a bit mask) of your choosing.
 
 ### Bitewise Right Shift and Left Shift Operators
 

@@ -10,7 +10,7 @@ Another way is to break this application into logical blocks. Compartmentalizing
 
 ---
 
-The function prototype basically tells what a function is called, the list of parameters the function accepts, and the return type of the function.
+The `function prototype` basically tells what a function is `called`, the `list of parameters` the function accepts, and the `return type` of the function.
 
 Without the function prototype the compiler wouldn’t know what the terms Area and Circumference are. 
 
@@ -154,9 +154,9 @@ Understanding this helps you understand why C++ gives you the option of programm
 A function call essentially means that the microprocessor jumps to executing the next instruction belonging to the called function at a nonsequential memory location. 
 After it is done with executing the instructions in the function, it returns to where it left off. 
 
-To implement this logic, the compiler converts your function call into a CALL instruction for the microprocessor. 
+To implement this logic, the compiler converts your function call into a `CALL` instruction for the microprocessor. 
 This instruction is accompanied by the address in memory the next instruction needs to be taken from.
-When the microprocessor encounters CALL, it saves the position of the instruction to be executed after the function call on the stack and jumps to the memory location contained in the CALL instruction.
+When the microprocessor encounters `CALL`, it saves the position of the instruction to be executed after the function call on the stack and jumps to the memory location contained in the `CALL` instruction.
 
 ### Understanding the Stack
 

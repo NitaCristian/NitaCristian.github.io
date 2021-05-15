@@ -7,18 +7,18 @@
 Variables are places of memory used to store different types of values. Defining a variable is quite simple and follows this pattern:
 
 ```c++    
-type variable_name;
+type_name variable_name;
 or
-type variable_name = initialValue; 
+type_name variable_name = initial_value; 
 ```
-The `type` attribute tells the compiler the nature of data the variable can store, and the compiler reserves the necessary space for it. 
+The `type_name` attribute tells the compiler the nature of data the variable can store, and the compiler reserves the necessary space for it. 
 
 The name chosen by the programmer is a friendly replacement for the address in the memory where the variable’s value is stored.
 
 ```c++
-int foo;
+int foo = 0;
 
-string text;
+string text = "This is a placeholder text";
 
 float bar;
 ```
@@ -52,7 +52,7 @@ Variables declared outside the scope of any function instead of within them have
 Indiscriminate use of global variables is considered poor programming practice. This is because global variables can be assigned values in any/every function and can contain an unpredictable state.
 
 ```c++
-int foo
+int foo;
 
 void func()
 {
@@ -95,7 +95,8 @@ C++ offers a variety of fundamental  variable types supported directly by the co
 Sign implies positive or negative. 
 
 All numbers you work with using a computer are stored in the memory in the form of bits and bytes. 
-A memory location that is 1 byte large contains 8 bits. Each bit can either be a 0 or 1. Thus, a memory location that is 1 byte large can contain a maximum of 2 to the power 8 values—that is, 256 unique values. 
+A memory location that is 1 byte large contains 8 bits. Each bit can either be a 0 or 1. 
+Thus, a memory location that is 1 byte large can contain a maximum of 2 to the power 8 values—that is, 256 unique values. 
 Similarly, a memory location that is 16 bits large can contain 2 to the power 16 values—that is, 65,536 unique values.
 
 If these values were to be unsigned (assumed to be only positive) then one byte could contain integer values ranging from 0 through 255 and two bytes would contain values ranging from 0 through 65,535.
@@ -110,7 +111,10 @@ unsigned int bar; // 0 to 4,294,967,295
 
 ---
 
-Floating-point numbers are real numbers. These are numbers that can be positive or negative. They can contain decimal values. So, if you want to store the value of pi (22 / 7 or 3.14) in a variable in C++, you would use a floating-point type.
+Floating-point numbers are real numbers. 
+These are numbers that can be positive or negative. 
+They can contain decimal values. 
+So, if you want to store the value of pi (22 / 7 or 3.14) in a variable in C++, you would use a floating-point type.
 
 ```c++
 float foo = 12.345;
@@ -136,6 +140,7 @@ There are cases where the type of a variable is apparent given the initializatio
 
 ```c++
 auto foo = 12; // foo is an int
+auto bar = "This is some text"; // bar is a string
 ```
 
 ## What is a Constant
@@ -147,7 +152,7 @@ C++ enables you to define pi as a constant that cannot be changed after declarat
 ```c++
 const int foo = 12;
 
-foo = 3; // This give an error
+foo = 3; // Gives an error
 ```
 
 ## Constant Expression Using constexpr
@@ -182,7 +187,7 @@ The compiler converts the enumerator into integers. Each enumerated value specif
 enum enum_name
 {
     const1 = 0,
-    const2,
+    const2, // automatically will have the value 1
     const3 = 2,
     ...
     constn
@@ -193,8 +198,8 @@ enum enum_name
 
 ---
 
+This is a preprocessor macro that replaces all the mentions of the constant with the value assigned.
+
 ```c++
 #define identifier token-string 
 ```
-
-This is a preprocessor macro that replaces all the mentions of the constant with the value assigned.

@@ -20,7 +20,7 @@ The execution of a C++ program always starts in the function main(). It is a sta
 ```c++
 int main() 
 {
-    // code here
+    // Code goes here
     return 0;
 }
 ```
@@ -32,7 +32,7 @@ int main()
 Namespaces are names given to parts of code that help in reducing the potential for a naming conflict. By invoking std::cout, you are telling the compiler to use that one unique cout that is available in the std namespace.
 
 ```c++
-namespace Example
+namespace Name
 {
     class Object 
     {
@@ -42,6 +42,9 @@ namespace Example
 
     void DoSomething() {}
 }
+
+Name::Object obj;
+Name::DoSomething();
 ```
 
 ## Comments in C++ Code
