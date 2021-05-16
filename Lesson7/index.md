@@ -121,8 +121,12 @@ Functions with the same name and return type but with different parameters or se
 Overloaded functions can be quite useful in applications where a function with a particular name that produces a certain type of output might need to be invoked with different sets of parameters.
 
 ```c++
-void func() {}
-void func(int a, int b) {}
+void func() {
+    
+}
+void func(int a, int b) {
+
+}
 ```
 
 ## Passing Arguments by Reference
@@ -137,7 +141,9 @@ This sign indicates to the compiler that the second argument should NOT be copie
 
 
 ```c++
-void func(int foo, float &bar) {}
+void func(int foo, float &bar) {
+
+}
 ```
 
 ## How Function Calls Are Handled by the Microprocessor
