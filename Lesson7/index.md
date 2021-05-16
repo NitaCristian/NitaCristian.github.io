@@ -137,9 +137,7 @@ This sign indicates to the compiler that the second argument should NOT be copie
 
 
 ```c++
-void func(int foo, float &bar)
-{
-}
+void func(int foo, float &bar) {}
 ```
 
 ## How Function Calls Are Handled by the Microprocessor
