@@ -2,6 +2,6 @@
 
 ---
 
-[C++ in One Hour a Day](Cpp/)
+[C++ in One Hour a Day](Cpp/index.md)
 
-[Python for Everybody](Python/)
+[Python for Everybody](PY4E/index.md)
