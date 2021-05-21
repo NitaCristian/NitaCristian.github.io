@@ -1,26 +1,42 @@
 # Polymorphism
 
-In this lesson, you find out: 
-- What polymorphism actually means 
-- What virtual functions do and how to use them 
-- What abstract base classes are and how to declare them 
-- What virtual inheritance means and where you need it
-
 ## Basics of Polymorphism
 
-“Poly” is Greek for many, and “morph” means form. Polymorphism is that feature of object-oriented languages that allows objects of different types to be treated similarly. This lesson focuses on polymorphic behavior that can be implemented in C++ via the inheritance hierarchy, also known as subtype polymorphism.
+“Poly” is Greek for many, and “morph” means form. 
+Polymorphism is that feature of object-oriented languages that allows objects of different types to be treated similarly. 
 
-.Need for Polymorphic BehaviorIn Lesson 10, “Implementing Inheritance,” you found out how Tuna and Carp inherit public method Swim() from Fish as shown in Listing 10.1. It is, however, possible that both Tuna and Carp provide their own Tuna::Swim() and Carp::Swim() methods to make Tuna and Carp different swimmers. Yet, as each of them is also a Fish, if a user with an instance of Tuna uses the base class type to invoke Fish::Swim(), he ends up executing only the generic part Fish::Swim() and not Tuna::Swim(), even though that base class instance Fish is a part of a Tuna
-
-What the user would ideally expect is that an object of type Tuna behaves like a tuna even if the method invoked is Fish::Swim(). In other words, when inputFish.Swim()is invoked in Line 25, he expects it to execute Tuna::Swim(). Such polymorphic  behavior where an object of known type class Fish can behave as its actual type; namely, derived class Tuna, can be implemented by making Fish::Swim() a virtual function
+The polymorphic behavior where an object of known type class Fish can behave as its actual type; namely, derived class Tuna, can be implemented by making Fish::Swim() a virtual function.
 
 ## Polymorphic Behavior Implemented Using Virtual Functions
 
-You have access to an object of type Fish, via pointer Fish* or reference Fish&. This object could have been instantiated solely as a Fish, or be part of a Tuna or Carpthat inherits from Fish. You don’t know (and don’t care). You invoke method Swim()using this pointer or reference, like this:pFish->Swim();myFish.Swim();What you expect is that the object Fish swims as a Tuna if it is part of a Tuna, as a Carp if it is part of a Carp, or an anonymous Fish if it wasn’t instantiated as part of a specialized class such as Tuna or Carp. You can ensure this by declaring function Swim() in the base class Fish as a virtual function:class Base{   virtual ReturnType FunctionName (Parameter List);};class Derived{   ReturnType FunctionName (Parameter List);};Use of keyword virtual means that the compiler ensures that any overriding variant of the requested base class method is invoked. Thus, if Swim() is declared virtual, invoking myFish.Swim() (myFish being of type Fish&) results in Tuna::Swim() being executed as demonstrated by Listing 11.2.
+You have access to an object of type Fish, via pointer Fish* or reference Fish&. 
+This object could have been instantiated solely as a Fish, or be part of a Tuna or Carpthat inherits from Fish. 
+
+You invoke method Swim() using this pointer or reference, like this:
+
+pFish->Swim();
+myFish.Swim();
+
+What you expect is that the object Fish swims as a Tuna if it is part of a Tuna, as a Carp if it is part of a Carp, or an anonymous Fish if it wasn’t instantiated as part of a specialized class such as Tuna or Carp. 
+
+You can ensure this by declaring function Swim() in the base class Fish as a virtual function:
+
+class Base {
+    virtual ReturnType FunctionName (Parameter List);
+};
+class Derived {   
+    ReturnType FunctionName (Parameter List);
+};
+
+Use of keyword virtual means that the compiler ensures that any overriding variant of the requested base class method is invoked. 
+
+Thus, if Swim() is declared virtual, invoking myFish.Swim() (myFish being of type Fish&) results in Tuna::Swim() being executed.
 
 ## Need for Virtual Destructors
 
-There is a more sinister side to the feature demonstrated by Listing 11.1—unintentionally invoking base class functionality of an instance of type derived, when a specialization is available. What happens when a function calls operator delete using a pointer of type Base* that actually points to an instance of type Derived?
+There is a more sinister side to the feature demonstrated by Listing 11.1—unintentionally invoking base class functionality of an instance of type derived, when a specialization is available.
+
+ What happens when a function calls operator delete using a pointer of type Base* that actually points to an instance of type Derived?
 
 This flaw means that the destructor of a deriving class that has been instantiated on the free store using new would not be invoked if delete is called using a pointer of type Base*. This can result in resources not being released, memory leaks, and so on and is a problem that is not to be taken lightly
 

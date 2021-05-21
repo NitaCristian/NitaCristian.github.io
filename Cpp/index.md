@@ -21,3 +21,11 @@
 [Lesson 8 - Pointers and References Explained](Lesson8/index.md)
 
 ## Part || - Fundamentals of Object-Oriented C++ Programming
+
+[Lesson 9 - Classes and Objects](Lesson9/index.md)
+
+[Lesson 10 - Implementing Inheritance](Lesson10/index.md)
+
+[Lesson 11 - Polymorphism](Lesson11/index.md)
+
+[Lesson 12 - Operator Types and Operator Overloading](Lesson12/index.md)

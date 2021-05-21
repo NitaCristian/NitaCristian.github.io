@@ -4,7 +4,8 @@
 
 ---
 
-To model an object in a program, you need a construct that enables you to group within it the attributes that define an object (data) and the activities that object can perform (functions) using the available attributes. This construct is the class.
+To model an object in a program, you need a construct that enables you to group within it the attributes that define an object and the activities that object can perform using the available attributes. 
+This construct is the class.
 
 Example:
 
@@ -30,9 +31,7 @@ class Object
 };
 ```
 
-Thus C++ has provided you with a powerful way to create your own data type that allows you to encapsulate attributes and functions that work using those. 
-All attributes of a class and all functions declared within it are called members of class Human. 
-Encapsulation, which is the ability to logically group data and functions that work using it, is an important property of object-oriented programming.
+    Encapsulation, which is the ability to logically group data and functions that work using it, is an important property of object-oriented programming.
 
 ## An Object as an Instance of a Class
 
@@ -40,6 +39,7 @@ Encapsulation, which is the ability to logically group data and functions that w
 
 A class is like a blueprint, and declaring a class alone has no effect on the execution of a program. 
 The real-world avatar of a class at program execution time is an object. 
+
 To use the features of a class, you typically create an instance of that class, called an object. 
 You use that object to access its member methods and attributes.
 
@@ -128,9 +128,8 @@ private:
 
 ---
 
-Abstraction is an important concept in object-oriented languages. 
-
-It empowers programmers to decide what attributes of a class need to remain known only to the class and its members with nobody outside it (with the exception of those declared as its “friends”) having access to it.
+    Abstraction is an important concept in object-oriented languages. 
+    It empowers programmers to decide what attributes of a class need to remain known only to the class and its members with nobody outside it having access to it.
 
 ## Constructors
 
@@ -178,7 +177,7 @@ Object::Object(){
 ---
 
 A constructor is always invoked during object creation, when an instance of a class is constructed. 
-This makes a constructor a perfect place for you to initialize class  member variables such as integers, pointers, and so on to values you choose. 
+This makes a constructor a perfect place for you to initialize class  member variables such as integers, pointers, or strings. 
 
 A constructor that is invoked without arguments is called the default constructor. 
 Programming a default constructor is optional. 
@@ -227,6 +226,7 @@ public:
 ```
 
 The initialization list is characterized by a colon (:) following the parameter declaration contained in parentheses (...), followed by an individual member variable and the value it is initialized to. 
+
 Initialization lists can also be useful in invoking base class constructors with specific arguments. 
 
 It is possible to define a constructor as a constant expression too, using keyword constexpr. 
@@ -366,11 +366,12 @@ These concepts enable you to create classes that can control how they’re creat
 
 ---
  
-You need to ensure that certain resources cannot be copied or duplicated. 
+You need to ensure that certain resources cannot be copied or duplicated.
+
 If you don’t declare a copy constructor, the C++ compiler inserts a default public copy constructor for you. 
 This ruins your design and threatens your implementation. 
 Yet, the language gives you a solution to this design paradigm. 
-You would ensure that your class cannot be copied by declaring a private copy constructor.  
+You would ensure that your class cannot be copied by declaring a private copy constructor.
 To avoid assignment, you declare a private assignment operator. 
 
 ```c++
@@ -389,22 +390,68 @@ Just declaring them as private is adequate and sufficient toward fulfilling your
 
 ---
 
-class President discussed earlier is good, but it has a shortcoming: 
-It cannot help creation of multiple presidents via instantiation of multiple objects:
-President One, Two, Three;
-Individually they are non-copyable thanks to the private copy constructors, but what you ideally need is a class President that has one, and only one, real-world manifestation—that is, there is only one object and creation of additional ones is prohibited. 
+Welcome to the concept of singleton that uses:
+- private constructors 
+- private assignment operator 
+- a static instance member
 
-Welcome to the concept of singleton that uses private constructors, a private assignment operator, and a static instance member to create this powerful pattern.
+- When the keyword static is used on a class’s data member, it ensures that the member is shared across all instances. 
 
-When the keyword static is used on a class’s data member, it ensures that the member is shared across all instances. 
-When static is used on a local variable declared within the scope of a function, it ensures that the variable retains its value between function calls. 
-When static is used on a member function—a method—the method is shared across all instances of the class.
+- When static is used on a local variable declared within the scope of a function, it ensures that the variable retains its value between function calls. 
+
+- When static is used on a member function the method is shared across all instances of the class.
 
 Use the singleton pattern only where absolutely necessary, keeping future growth of the application and its features in perspective. 
+
 Note that the very feature that it restricts creation of multiple instances can become an architectural bottleneck when a use case comes up that needs multiple instances of the class. 
 
-For example, if our project were to change from modeling a nation to modeling the United Nations, which is currently represented by 193 member nations, each with its own president, clearly we would have an architectural problem given a singleton class President that would permit the existence of only one instance.
 
+<details>
+<summary>Singleton Example</summary>
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+class Singleton {
+   static Singleton *instance;
+   int data;
+ 
+   // Private constructor so that no objects can be created.
+   Singleton() {
+      data = 0;
+   }
+
+   public:
+   static Singleton *getInstance() {
+      if (!instance)
+      instance = new Singleton;
+      return instance;
+   }
+
+   int getData() {
+      return this -> data;
+   }
+
+   void setData(int data) {
+      this -> data = data;
+   }
+};
+
+//Initialize pointer to zero so that it can be initialized in first call to getInstance
+Singleton *Singleton::instance = 0;
+
+int main(){
+   Singleton *s = s->getInstance();
+   cout << s->getData() << endl;
+   s->setData(100);
+   cout << s->getData() << endl;
+   return 0;
+}
+```
+
+</details>
 
 ## Class That Prohibits Instantiation on the Stack
 
@@ -412,6 +459,7 @@ For example, if our project were to change from modeling a nation to modeling th
 
 Space on the stack is often limited. 
 You might want to ensure that an object of this class cannot be instantiated on the stack, and instead it is forced to create instances only on the free store. 
+
 The key to ensuring this is declaring the destructor private.
 
 ```c++
