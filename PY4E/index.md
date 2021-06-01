@@ -4,7 +4,7 @@
 
 [Introduction](Introduction/index.md)
 
-[File Handling](File%20Handling/index.md)
+[File Handling](File_Handling/index.md)
 
 [List](List/index.md)
 
@@ -14,14 +14,14 @@
 
 [Set](Set/index.md)
 
-[Regular expressions](Regular%20expressions/index.md)
+[Regular Expressions](Regular_Expressions/index.md)
 
-[Networked programs](Networked%20programs/index.md)
+[Networked Programs](Networked_Programs/index.md)
 
-[Using Web Services](Using%20Web%20Services/index.md)
+[Using Web Services](Using_Web_Services/index.md)
 
-[Classes and Objects](Classes%20and%20Objects/index.md)
+[Classes and Objects](Classes_and_Objects/index.md)
 
-[Using Databases and SQL](Using%20Databases%20and%20SQL/index.md)
+[Using Databases and SQL](Using_Databases_and_SQL/index.md)
 
-[Visualizing data](Visualizing%20data/index.md)
+[Visualizing Data](Visualizing_Data/index.md)
