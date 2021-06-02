@@ -44,36 +44,40 @@ The 2D coordinate system we’re referring to here is a system in which objects 
 
 The function `love.load()`.
 
+Executed once at the begining of the game. 
+Used to initialize the game.
+
 ```lua
--- Executed once at the begining of the game
--- Used to initialize the game
 function love.load()
 end
 ```
 
 The function `love.update()`.
 
+Executed at each frame of the program execution. 
+Used to update the state of our game.
+
 ```lua
--- Executed at each frame of the program execution
--- Used to update the state of our game
 function love.update(dt)
 end
 ```
 
 The function `love.draw()`.
 
+Called each frame. 
+Used to draw things to the screen.
+
 ```lua
--- Called each frame
--- Used to draw things to the screen
 function love.draw()
 end
 ```
 
-The function `love.window.setMode(width, height, params)`. is 's dimensions and properties such as vsync, fullscreen, and resizable.
+The function `love.window.setMode(width, height, params)`.
+
+Used to initialize the properties of the window. 
+Properties such as width, height, whether or not is fullscreen, resizable.
 
 ```lua
--- Used to initialize the properties of the window
--- Properties such as width, height, whether or not is fullscreen, resizable
 love.window.setMode(width, height, params)
 
 love.window.setMode(1280, 720, {
@@ -85,33 +89,37 @@ love.window.setMode(1280, 720, {
 
 The function `love.graphics.printf(text, x, y, [width], [align])`.
 
+Shows text to the screen. 
+Can align text left, right, or center.
+
 ```lua
--- Shows text to the screen
--- Can align text left, right, or center
 love.graphics.printf(text, x, y, [width], [align])
 ```
 
 The function `love.graphics.setDefaultFilter(min, mag)`.
 
+Sets the texture scaling filter when minimizing and magnifying textures and fonts. 
+Default the scaling filter is bilinear. 
+Other option is nearest.
+
 ```lua
--- Sets the texture scaling filter when minimizing and magnifying textures and fonts
--- Default the scaling filter is bilinear
--- Other option is nearest
 love.graphics.setDefaultFilter(min, mag)
 ```
 
 The function `love.event.quit()`.
 
+Terminates the application upon execution.
+
 ```lua
--- Terminates the application upon execution
 love.event.quit()
 ```
 
 The function `love.keypressed(key)`.
 
+Executes whenever we press a key. 
+Allows us to receive input from the keyboard.
+
 ```lua
--- Executes whenever we press a key
--- Allows us to receive input from the keyboard
 function love.keypressed(key)    
 end
 ```
@@ -151,96 +159,110 @@ end
 </details>
 
 The function `love.graphics.newFont(path, size)`. 
+
+Loads a font file in memory at a specific path, setting it to a specific size.
+
 ```lua
--- Loads a font file in memory at a specific path, setting it to a specific size
 love.graphics.newFont(path, size)
 ```
 
 The function `love.graphics.setFont(font)`. 
 
+Sets the current active font to a passed-in font object.
+
 ```lua
--- Sets the current active font to a passed-in font object
 love.graphics.setFont(font)
 ```
 
 The function `love.graphics.clear(r, g, b, a)`.
 
+Wipes the entire screen with a color defined by an RGBA set.
+
 ```lua
--- Wipes the entire screen with a color defined by an RGBA set
 love.graphics.clear(r, g, b, a)
 ```
 
 The function `love.graphics.rectangle(mode, x, y, width, height)`.
 
+Draws a rectangle onto the screen. 
+The mode parameter can be set to fill or line.
+
 ```lua
--- Draws a rectangle onto the screen
--- The mode parameter can be set to fill or line
 love.graphics.rectangle(mode, x, y, width, height)
 ```
 
 The function `love.keyboard.isDown(key)`.
 
+Returns true or false depending on whether the specified key is currently held down.
+
 ```lua
--- Returns true or false depending on whether the specified key is currently held down
 love.keyboard.isDown(key)
 ```
 
 The function `math.randomseed(num)`.
 
+“seeds” the random number generator.
+
 ```lua
--- “seeds” the random number generator
 math.randomseed(num)
 ```
 
 The function `os.time()`.
 
+Returns, in seconds, the time since 00:00:00 UTC, January 1, 1970.
+
 ```lua
--- Returns, in seconds, the time since 00:00:00 UTC, January 1, 1970
 os.time()
 ```
 
 The function `math.random(min, max)`.
 
+Returns a random number, dependent on the seeded random number generator, between min and max, inclusive.
+
 ```lua 
--- Returns a random number, dependent on the seeded random number generator, between min and max, inclusive
 math.random(min, max)
 ```
 
 The function `math.min(num1, num2)`.
 
+Returns the lesser of the two numbers passed in.
+
 ```lua
--- Returns the lesser of the two numbers passed in
 math.min(num1, num2)
 ```
 
 The function `math.max(num1, num2)`
 
+Returns the greater of the two numbers passed in.
+
 ```lua
--- Returns the greater of the two numbers passed in
 math.max(num1, num2)
 ```
 
 The function `love.window.setTitle(title)`.
 
+Sets the title of our application window.
+
 ```lua
--- Sets the title of our application window
 love.window.setTitle(title)
 ```
 
 The function `love.timer.getFPS()`
 
+Returns the current FPS.
+
 ```lua
--- Returns the current FPS
 love.timer.getFPS()
 ```
 
 The function `love.audio.newSource(path, [type])`
 
+Creates a LÖVE2D Audio object. 
+“type” of “stream” or “static”. 
+streamed assets will be streamed from disk. 
+static assets will be preserved in memory.
+
 ```lua
--- Creates a LÖVE2D Audio object
--- “type” of “stream” or “static”
--- streamed assets will be streamed from disk
--- static assets will be preserved in memory
 love.audio.newSource(path, [type])
 
 sounds = {
@@ -252,10 +274,11 @@ sounds = {
 
 The function `love.resize(width, height)`.
 
+Called by LÖVE every time we resize the application. 
+push:resize() needs to be called here. 
+so that it can dynamically rescale its internal canvas to fit our new window dimensions. 
+
 ```lua
--- Called by LÖVE every time we resize the application
--- push:resize() needs to be called here
--- so that it can dynamically rescale its internal canvas to fit our new window dimensions
 function love.resize(width, height) 
     push:resize(width, height)
 end
