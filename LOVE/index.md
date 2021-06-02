@@ -134,7 +134,9 @@ By using the push library to treat our game as if it were on a 432x243 window, w
 [push Library Repo](https://github.com/Ulydev/push)
 
 <details>
+
 <summary>Setup push</summary>
+
 
 ```lua
 -- import the library
