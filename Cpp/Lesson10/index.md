@@ -269,7 +269,9 @@ TunaDummyMember destructor
 Fish destructor
 FishDummyMember destructor
 ```
+
 </details>
+
 
 ## Private Inheritance
 
