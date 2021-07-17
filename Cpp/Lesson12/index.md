@@ -31,6 +31,7 @@ return_type operator operator_type (){
 ```
 ## Types of Unary Operators
 The unary operators that can be overloaded (or redefined) are shown in Table  
+
 | Operator             | Name                        |
 | -------------------- | --------------------------- |
 | ++                   | Increment                   |
