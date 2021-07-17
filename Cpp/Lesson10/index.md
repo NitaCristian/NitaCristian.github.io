@@ -194,7 +194,9 @@ Base class objects are instantiated before the derived class.
 The sequence of destruction is the opposite to that of construction. 
 
 <details>
+
 <summary>Order of Construction and Destruction</summary>
+
 
 ```c++
 #include <iostream>
@@ -251,6 +253,7 @@ private:
 int main() {
     Tuna myDinner;
 }
+
 ```
 
 The Output will be:
